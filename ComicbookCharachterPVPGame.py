@@ -13,8 +13,8 @@ carlSprites = py.sprite.Group()
 kishaSprites = py.sprite.Group()
 MrsCUNTifulSprites = py.sprite.Group()
 
-carlFrozen = SwitchingMrsCUNTiful(400,400)
-carlSprites.add(carlFrozen)
+MrsCUNTIfulBase = SwitchingMrsCUNTiful(400,400)
+carlSprites.add(MrsCUNTIfulBase)
 
 # # loading Mrs.CUNTiful's walk cycle
 # CuntWalkFrame1 = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle/walk_cycle_frame_1.png")
@@ -78,33 +78,34 @@ while playing:
     carlSprites.draw(screen)
     if keys[py.K_w]:
         print("cool")
-        tempX = int(carlFrozen.rect.centerx)
-        tempY = int(carlFrozen.rect.centery)
-        carlFrozen.Jump(tempX,tempY,5)
+        tempX = int(MrsCUNTIfulBase.rect.centerx)
+        tempY = int(MrsCUNTIfulBase.rect.centery)
+        MrsCUNTIfulBase.Jump(5)
                 # change from any sprite to jump
         carlSprites.draw(screen)
+
+
     if keys[py.K_a]:
-        print("Jump")
-        tempX = int(carlFrozen.rect.centerx)
-        tempY = int(carlFrozen.rect.centery)
-        
-        carlFrozen.DashBack(tempX,tempY,5)
-                # change from any sprite to dask back
-        carlSprites.draw(screen)
+        print("cool")
+        MrsCUNTIfulBase.DashBackCUNT(5)
+        MrsCUNTifulSprites.draw(screen)
 
 
     if keys[py.K_s]:
-        print("cool")
-                # change from any sprite to duck
+        tempX = int(MrsCUNTIfulBase.rect.centerx)
+        tempY = int(MrsCUNTIfulBase.rect.centery)
+        # change from any sprite to duck
+        MrsCUNTIfulBase.Duck(tempX,tempY)
+
     if keys[py.K_d]:
         print("cool")
-        tempX = int(carlFrozen.rect.centerx)
-        tempY = int(carlFrozen.rect.centery)
-        carlFrozen.DashForward(tempX,tempY,5)
+        MrsCUNTIfulBase.DashForwardCUNT(5)
 
             # change from any sprite to dash forward
     carlSprites.draw(screen)
+    MrsCUNTifulSprites.draw(screen)
     carlSprites.update()
+    MrsCUNTifulSprites.update()
     py.display.update()
     sleep(10/1000)
 

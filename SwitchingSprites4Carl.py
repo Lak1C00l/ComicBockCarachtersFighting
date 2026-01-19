@@ -1,13 +1,12 @@
 import pygame as py
-from time import sleep
 
-class SwitchingMrsCUNTiful(py.sprite.Sprite):
+class SwitchingCarl(py.sprite.Sprite):
     def __init__(self,x,y):
         super().__init__()
-        self.image = py.Surface((350,350),py.SRCALPHA)
+        self.image = py.Surface((250,350),py.SRCALPHA)
         self.rect = self.image.get_rect()
         
-        self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle/walk_cycle_frame_1.png")
+        self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle/walk_cycle_frame_1.png")
         self.img = py.transform.scale(self.img,(250,350))
         self.image.blit(self.img,self.rect)
         self.rect.centerx = x
@@ -15,13 +14,13 @@ class SwitchingMrsCUNTiful(py.sprite.Sprite):
 
     def Jump(self,pixalMove):
         for i in range(11):
-            self.img = py.image.load("./CharSprites/MrsCUNTiful/jump.png")
+            self.img = py.image.load("./CharSprites/Carl/without_backround/jump.png")
             self.image.fill((0,0,0,0))
             self.image.blit(py.transform.scale(self.img,(150,150)),self.image.get_rect())
             self.rect.centery += pixalMove
             
         for i in range(11):
-            self.img = py.image.load("./CharSprites/MrsCUNTiful/jump.png")
+            self.img = py.image.load("./CharSprites/Carl/without_backround/jump.png")
             self.image.fill((0,0,0,0))
             self.image.blit(py.transform.scale(self.img,(150,150)),self.image.get_rect())
             self.rect.centery -= pixalMove
@@ -31,13 +30,13 @@ class SwitchingMrsCUNTiful(py.sprite.Sprite):
     def Duck(self,x,y):
         # self.rect.centerx = x - 100
         #self.rect.centery = y + 100
-        self.img = py.image.load("./CharSprites/MrsCUNTiful/duck.png")
+        self.img = py.image.load("./CharSprites/Carl/without_backround/duck.png")
         self.image.fill((0,0,0,0))
         self.image.blit(py.transform.scale(self.img,(150,150)),self.image.get_rect())
 
 
     def DashBackCUNT(self,pixalMove):
-        self.img = py.image.load("./CharSprites/MrsCUNTiful/dash_back.png")
+        self.img = py.image.load("./CharSprites/Carl/without_backround/dash_back.png")
         self.image.fill((0,0,0,0))
         self.image.blit(py.transform.scale(self.img,(350,350)),self.image.get_rect())
 
@@ -45,12 +44,11 @@ class SwitchingMrsCUNTiful(py.sprite.Sprite):
 
         # while key is pressed keep dashing
         self.rect.centerx -= pixalMove
-    def Walkcycle(self,x,y,playerIdle):
-        self.rect.centerx = x
-        self.rect.centery = y
+    def Walkcycle(self,playerIdle):
+        pluh = 1
 
     def DashForwardCUNT(self,pixalMove):
-        self.img = py.image.load("./CharSprites/MrsCUNTiful/dash_forward.png")
+        self.img = py.image.load("./CharSprites/Carl/without_backround/dash_forward.png")
         self.image.fill((0,0,0,0))
         self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
 
