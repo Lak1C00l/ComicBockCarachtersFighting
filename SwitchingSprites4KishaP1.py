@@ -1,12 +1,14 @@
 import pygame as py
 
 class SwitchingKisha(py.sprite.Sprite):
-    def __init__(self,x,y):
+    def __init__(self,x,y,isPlayer2):
         super().__init__()
         self.image = py.Surface((350,400),py.SRCALPHA)
         self.rect = self.image.get_rect()
         self.img = py.image.load("./CharSprites/Kisha/with_backround/walk_cycle/walk_frame_1.png")
         self.img = py.transform.scale(self.img,(250,400))
+        if isPlayer2:
+            self.img = py.transform.flip(self.img,True,False)
         self.image.blit(self.img,self.rect)
         self.rect.centerx = x
         self.rect.centery = y
@@ -17,18 +19,22 @@ class SwitchingKisha(py.sprite.Sprite):
 
 
 
-    def Jump(self,pixalMove,DuckOccur):
+    def Jump(self,pixalMove,DuckOccur,isPlayer2):
         if DuckOccur:
             self.rect.centery = 400
         if self.is_jump:
             self.img = py.image.load("./CharSprites/Kisha/without_backround/jump.png")
             self.image.fill((0,0,0,0))
+            if isPlayer2:
+                self.img = py.transform.flip(self.img,True,False)
             self.image.blit(py.transform.scale(self.img,(250,200)),self.image.get_rect())
             self.rect.centery -= pixalMove
             
         else:
             self.img = py.image.load("./CharSprites/Kisha/without_backround/jump.png")
             self.image.fill((0,0,0,0))
+            if isPlayer2:
+                self.img = py.transform.flip(self.img,True,False)
             self.image.blit(py.transform.scale(self.img,(250,200)),self.image.get_rect())
             self.rect.centery += pixalMove
 
