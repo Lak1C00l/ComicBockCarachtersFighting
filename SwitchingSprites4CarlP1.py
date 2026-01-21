@@ -63,7 +63,6 @@ class SwitchingCarl(py.sprite.Sprite):
             self.rect.centerx += pixalMove
         else:
             self.img = py.image.load("./CharSprites/Carl/without_backround/dash_back.png")
-            #self.img = py.transform.flip(self.img,True,False)
             self.image.fill((0,0,0,0))
             self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
             self.rect.centerx -= pixalMove
@@ -84,38 +83,38 @@ class SwitchingCarl(py.sprite.Sprite):
             self.rect.centerx += pixalMove
 
         
-    def Walkcycle(self,pixalMove,DuckOccur,JumpOccur,isPlayer2):
-        if DuckOccur == True:
-            self.rect.centery -= 150
-        elif JumpOccur:
-            self.rect.centery += 150
-        self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_1.png")
-        if isPlayer2:
-            self.img = py.transform.flip(self.img,True,False)
-        self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-        self.rect.centerx += pixalMove
+    # def Walkcycle(self,pixalMove,DuckOccur,JumpOccur,isPlayer2):
+    #     if DuckOccur == True:
+    #         self.rect.centery -= 150
+    #     elif JumpOccur:
+    #         self.rect.centery += 150
+    #     self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_1.png")
+    #     if isPlayer2:
+    #         self.img = py.transform.flip(self.img,True,False)
+    #     self.image.fill((0,0,0,0))
+    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
+    #     self.rect.centerx += pixalMove
 
-        self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_2.png")
-        if isPlayer2:
-            self.img = py.transform.flip(self.img,True,False)
-        self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-        self.rect.centerx += pixalMove
+    #     self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_2.png")
+    #     if isPlayer2:
+    #         self.img = py.transform.flip(self.img,True,False)
+    #     self.image.fill((0,0,0,0))
+    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
+    #     self.rect.centerx += pixalMove
 
-        self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_3.png")
-        if isPlayer2:
-            self.img = py.transform.flip(self.img,True,False)
-        self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-        self.rect.centerx += pixalMove
+    #     self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_3.png")
+    #     if isPlayer2:
+    #         self.img = py.transform.flip(self.img,True,False)
+    #     self.image.fill((0,0,0,0))
+    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
+    #     self.rect.centerx += pixalMove
 
-        self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_4.png")
-        if isPlayer2:
-            self.img = py.transform.flip(self.img,True,False)
-        self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-        self.rect.centerx += pixalMove
+    #     self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_4.png")
+    #     if isPlayer2:
+    #         self.img = py.transform.flip(self.img,True,False)
+    #     self.image.fill((0,0,0,0))
+    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
+    #     self.rect.centerx += pixalMove
 
 
 

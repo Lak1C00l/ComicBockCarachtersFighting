@@ -1,5 +1,4 @@
 import pygame as py
-from time import sleep
 
 class SwitchingMrsCUNTiful(py.sprite.Sprite):
     def __init__(self,x,y,isPlayer2):
@@ -90,35 +89,35 @@ class SwitchingMrsCUNTiful(py.sprite.Sprite):
         
 
 
-    def Walkcycle(self,playerIdle,pixalMove,DuckOccur,JumpOccur,isPlayer2):
-        if DuckOccur == True:
-            self.rect.centery -= 150
-        elif JumpOccur:
-            self.rect.centery += 150
-        self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle_frame_1.png")
-        if isPlayer2:
-            self.img = py.transform.flip(self.img,True,False)
-        self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-        self.rect.centerx += pixalMove
-        self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle_frame_2.png")
-        if isPlayer2:
-            self.img = py.transform.flip(self.img,True,False)
-        self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-        self.rect.centerx += pixalMove
-        self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle_frame_3.png")
-        if isPlayer2:
-            self.img = py.transform.flip(self.img,True,False)
-        self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-        self.rect.centerx += pixalMove
-        self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle_frame_4.png")
-        if isPlayer2:
-            self.img = py.transform.flip(self.img,True,False)
-        self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-        self.rect.centerx += pixalMove
+    # def Walkcycle(self,playerIdle,pixalMove,DuckOccur,JumpOccur,isPlayer2):
+    #     if DuckOccur == True:
+    #         self.rect.centery -= 150
+    #     elif JumpOccur:
+    #         self.rect.centery += 150
+    #     self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle_frame_1.png")
+    #     if isPlayer2:
+    #         self.img = py.transform.flip(self.img,True,False)
+    #     self.image.fill((0,0,0,0))
+    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
+    #     self.rect.centerx += pixalMove
+    #     self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle_frame_2.png")
+    #     if isPlayer2:
+    #         self.img = py.transform.flip(self.img,True,False)
+    #     self.image.fill((0,0,0,0))
+    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
+    #     self.rect.centerx += pixalMove
+    #     self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle_frame_3.png")
+    #     if isPlayer2:
+    #         self.img = py.transform.flip(self.img,True,False)
+    #     self.image.fill((0,0,0,0))
+    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
+    #     self.rect.centerx += pixalMove
+    #     self.img = py.image.load("./CharSprites/MrsCUNTiful/walk_cycle_frame_4.png")
+    #     if isPlayer2:
+    #         self.img = py.transform.flip(self.img,True,False)
+    #     self.image.fill((0,0,0,0))
+    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
+    #     self.rect.centerx += pixalMove
 
 
 
@@ -130,7 +129,7 @@ class SwitchingMrsCUNTiful(py.sprite.Sprite):
             self.img = py.transform.flip(self.img,True,False)
         self.image.fill((0,0,0,0))
         self.image.blit(py.transform.scale(self.img,(200,350)),self.image.get_rect())
-        sleep(0.3)
+        
 
         #shooting long range
         #switch to chargeing for 0.3 and then use long range for 0.3 4 MrsCUNT
