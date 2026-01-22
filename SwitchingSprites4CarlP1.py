@@ -82,41 +82,6 @@ class SwitchingCarl(py.sprite.Sprite):
             self.image.blit(py.transform.scale(self.img,(350,350)),self.image.get_rect())
             self.rect.centerx += pixalMove
 
-        
-    # def Walkcycle(self,pixalMove,DuckOccur,JumpOccur,isPlayer2):
-    #     if DuckOccur == True:
-    #         self.rect.centery -= 150
-    #     elif JumpOccur:
-    #         self.rect.centery += 150
-    #     self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_1.png")
-    #     if isPlayer2:
-    #         self.img = py.transform.flip(self.img,True,False)
-    #     self.image.fill((0,0,0,0))
-    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-    #     self.rect.centerx += pixalMove
-
-    #     self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_2.png")
-    #     if isPlayer2:
-    #         self.img = py.transform.flip(self.img,True,False)
-    #     self.image.fill((0,0,0,0))
-    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-    #     self.rect.centerx += pixalMove
-
-    #     self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_3.png")
-    #     if isPlayer2:
-    #         self.img = py.transform.flip(self.img,True,False)
-    #     self.image.fill((0,0,0,0))
-    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-    #     self.rect.centerx += pixalMove
-
-    #     self.img = py.image.load("./CharSprites/Carl/without_backround/walk_cycle_frame_4.png")
-    #     if isPlayer2:
-    #         self.img = py.transform.flip(self.img,True,False)
-    #     self.image.fill((0,0,0,0))
-    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-    #     self.rect.centerx += pixalMove
-
-
 
     def IdleCarl(self,DuckOccur,JumpOccur,isPlayer2):
         if DuckOccur == True:
@@ -150,9 +115,8 @@ class SwitchingCarl(py.sprite.Sprite):
     def Attack(self,DuckOccur,JumpOccur,isPlayer2):
         if DuckOccur or JumpOccur:
             self.rect.centery = 400
-        self.img = py.image.load("./CharSprites/Carl/without_backround/close_attack.png")
+        self.img = py.image.load("./CharSprites/Carl/without_backround/punch_with_left.png")
         if isPlayer2:
             self.img = py.transform.flip(self.img,True,False)
-        self.img = py.transform.rotate(self.img,90)
         self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(350,350)),self.image.get_rect())
+        self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())

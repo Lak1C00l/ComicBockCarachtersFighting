@@ -6,9 +6,9 @@ class SwitchingKisha(py.sprite.Sprite):
         self.image = py.Surface((350,400),py.SRCALPHA)
         self.rect = self.image.get_rect()
         self.img = py.image.load("./CharSprites/Kisha/with_backround/walk_cycle/walk_frame_1.png")
+        self.img = py.transform.scale(self.img,(250,400))
         if isPlayer2:
             self.img = py.transform.flip(self.img,True,False)
-        self.img = py.transform.scale(self.img,(250,400))
         self.image.blit(self.img,self.rect)
         self.rect.centerx = x
         self.rect.centery = y
@@ -85,51 +85,40 @@ class SwitchingKisha(py.sprite.Sprite):
             self.image.blit(py.transform.scale(self.img,(350,400)),self.image.get_rect())
             self.rect.centerx += pixalMove
 
-        
 
-    # def Walkcycle(self,pixalMove,DuckOccur,JumpOccur):
-    #     if DuckOccur or JumpOccur:
-    #         self.rect.centery = 400
-    #     self.img = py.image.load("./CharSprites/Kisha/without_backround/walk_frame_1.png")
-    #     self.image.fill((0,0,0,0))
-    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-    #     self.rect.centerx += pixalMove
-
-    #     self.img = py.image.load("./CharSprites/Kisha/without_backround/walk_frame_2.png")
-    #     self.image.fill((0,0,0,0))
-    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-    #     self.rect.centerx += pixalMove
-
-    #     self.img = py.image.load("./CharSprites/Kisha/without_backround/walk_frame_3.png")
-    #     self.image.fill((0,0,0,0))
-    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-    #     self.rect.centerx += pixalMove
-
-    #     self.img = py.image.load("./CharSprites/Kisha/without_backround/walk_frame_4.png")
-    #     self.image.fill((0,0,0,0))
-    #     self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
-    #     self.rect.centerx += pixalMove
-
-
-
-    def IdleKisha(self,DuckOccur,JumpOccur):
+    def IdleKisha(self,DuckOccur,JumpOccur,isPlayer2):
         if DuckOccur or JumpOccur:
             self.rect.centery = 375
         self.img = py.image.load("./CharSprites/Kisha/without_Backround/close_attack_idle.png")
         self.image.fill((0,0,0,0))
+        if isPlayer2:
+                self.img = py.transform.flip(self.img,True,False)
         self.image.blit(py.transform.scale(self.img,(250,350)),self.image.get_rect())
 
+    def Attack(self,DuckOccur,JumpOccur,isPlayer2):
+        if DuckOccur or JumpOccur:
+            self.rect.centery = 375
+        self.img = py.image.load("./CharSprites/Kisha/without_Backround/close_attack_left.png")
+        self.image.fill((0,0,0,0))
+        if isPlayer2:
+                self.img = py.transform.flip(self.img,True,False)
+        self.image.blit(py.transform.scale(self.img,(300,400)),self.image.get_rect())
 
-    def Block(self,DuckOccur,JumpOccur):
+
+    def Block(self,DuckOccur,JumpOccur,isPlayer2):
         if DuckOccur or JumpOccur:
             self.rect.centery = 375
         self.img = py.image.load("./CharSprites/Kisha/without_backround/block.png")
         self.image.fill((0,0,0,0))
+        if isPlayer2:
+                self.img = py.transform.flip(self.img,True,False)
         self.image.blit(py.transform.scale(self.img,(250,400)),self.image.get_rect())
 
-    def Hit(self,DuckOccur,JumpOccur):
+    def Hit(self,DuckOccur,JumpOccur,isPlayer2):
         if DuckOccur or JumpOccur:
             self.rect.centery = 375
         self.img = py.image.load("./CharSprites/Kisha/without_backround/being_hit.png")
         self.image.fill((0,0,0,0))
-        self.image.blit(py.transform.scale(self.img,(250,400)),self.image.get_rect())
+        if isPlayer2:
+                self.img = py.transform.flip(self.img,True,False)
+        self.image.blit(py.transform.scale(self.img,(350,400)),self.image.get_rect())
